@@ -3,6 +3,11 @@ function header() {
     headerTemplate.innerHTML = `
         <header>
             <img src="assets/images/Logo.png">
+
+            <div class="searchBar">
+                <input type="text" placeholder="Pesquisar..." class="searchInput">
+                <i class="fas fa-search searchBtn"></i>
+            </div>
         </header>
     `
     document.body.appendChild(headerTemplate.content);
@@ -13,21 +18,21 @@ function sideMenu() {
     sideMenuTemplate.innerHTML = `
         <aside>
             <div class="section">
-                <div class="navBtn" href="home.html" title="Home">
+                <a class="navBtn" href="home.html" title="Home">
                     <i class="fa-solid fa-house"></i>
-                </div>
+                </a>
 
-                <div class="navBtn" href="customer.html" title="Clientes">
+                <a class="navBtn" href="customer.html" title="Clientes" link="customer.html">
                     <i class="fas fa-users"></i>
-                </div>
+                </a>
 
-                <div class="navBtn" href="ticket.html" title="OS (Ordem de Serviço)">
+                <a class="navBtn" href="ticket.html" title="OS (Ordem de Serviço)">
                     <i class="fa-solid fa-ticket"></i>
-                </div>
+                </a>
 
-                <div class="navBtn" href="stock.html" title="Estoque">
+                <a class="navBtn" href="stock.html" title="Estoque">
                     <i class="fa-solid fa-dolly"></i>
-                </div>
+                </a>
             </div>
 
             <div class="section">

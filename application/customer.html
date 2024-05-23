@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoParts</title>
+
+    <!--components (header/sideMenus)-->
+    <script src="assets/js/windowComponents.js"></script>
+    <link rel="stylesheet" href="assets/css/windowComponent.css">
+
+    <!--icons-->
+    <script src="https://kit.fontawesome.com/68078e62e6.js" crossorigin="anonymous"></script>
+
+    <!--bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!--jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!--cur screen-->
+    <link rel="stylesheet" href="assets/css/customer.css">
+    <script src="assets/js/customer.js"></script>
+</head>
+<body>
+    <script>header();</script>
+
+    <div class="screen" id="screen">
+        <script>sideMenu();</script>
+
+        <div class="content">
+            <!-- Título -->
+            <div class="windowTitle">
+                <i class="fas fa-users"></i>
+                <h2>Clientes</h2>
+            </div>
+            <!---->
+
+            <!-- Opções de criação -->
+            <div class="optionGrp">
+                <div class="actionBtn">
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#customerModal">
+                        Criar
+                        <i class="fas fa-plus"></i>
+                    </button>
+
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#customerModal">
+                        Editar
+                        <i class="fas fa-edit"></i>
+                    </button>
+    
+                    <button type="button" class="btn btn-danger">
+                        Excluir
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+                
+
+                <div class="searchBar">
+                    <input type="text" placeholder="Pesquisar..." class="searchInput">
+                    <i class="fas fa-search searchBtn"></i>
+                </div>
+
+                <button type="button" class="btn btn-primary" data-bs-toogle="modal" data-bs-target="#exampleModalCenter">
+                    Filtros...
+                </button>
+            </div>
+            <!---->
+
+            <!-- Tabela de clientes -->
+            <div class="customerTable">
+                <table class="table table-hover">
+                    <thead class="table-light table-bordered">
+                        <tr>
+                            <th scope="col"><input type="checkbox"></th>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">CPF</th>
+                            <th scope="col">Telefone</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Endereço</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ondblclick="openDataScreen()" onclick="selectRow()">
+                            <td><input type="checkbox"></td>
+                            <td>123456</td>
+                            <td>João da Silva</td>
+                            <td>123.456.789-00</td>
+                            <td>(11) 99999-9999</td>
+                            <td> joão@gmail.com </td>
+                            <td> Rua das Flores, 123 </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!---->
+            
+            <!--  Modal dos dados do cliente -->
+            <div class="modal fade" id="customerModal" tabindex="-1" aria-labelledby="customerModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Dados do cliente</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <div class="modal-body">
+                        ...
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-primary">Salvar alterações</button> <!-- Só aparece se for editar um cliente -->
+                            <button type="button" class="btn btn-success">Criar cliente</button> <!-- Só aparece se for criar um novo cliente -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!---->
+
+        </div>
+
+    </div>
+    
+</body>
