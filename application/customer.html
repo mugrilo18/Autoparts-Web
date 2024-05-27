@@ -69,11 +69,11 @@
             <!---->
 
             <!-- Tabela de clientes -->
-            <div class="customerTable">
+            <div class="customerTable table-responsive">
                 <table class="table table-hover">
                     <thead class="table-light table-bordered">
                         <tr>
-                            <th scope="col"><input type="checkbox"></th>
+                            <th scope="col"><input id="allRowsCheck" type="checkbox" onclick="selectAllRows()"></th>
                             <th scope="col">ID</th>
                             <th scope="col">Nome</th>
                             <th scope="col">CPF</th>
@@ -83,8 +83,17 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ondblclick="openDataScreen()" onclick="selectRow()">
-                            <td><input type="checkbox"></td>
+                        <tr class="selectedRow" ondblclick="openDataScreen()" onclick="selectRow(this, 'single')">
+                            <td><input class="selectCheck" type="checkbox" onclick="selectRow(this.closest('tr'), 'multi'); event.stopPropagation();"></td>
+                            <td>123456</td>
+                            <td>João da Silva</td>
+                            <td>123.456.789-00</td>
+                            <td>(11) 99999-9999</td>
+                            <td> joão@gmail.com </td>
+                            <td> Rua das Flores, 123 </td>
+                        </tr>
+                        <tr class="selectedRow" ondblclick="openDataScreen()" onclick="selectRow(this, 'single')">
+                            <td><input class="selectCheck" type="checkbox" onclick="selectRow(this.closest('tr'), 'multi'); event.stopPropagation();"></td>
                             <td>123456</td>
                             <td>João da Silva</td>
                             <td>123.456.789-00</td>

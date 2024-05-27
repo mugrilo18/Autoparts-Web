@@ -58,6 +58,26 @@
     border-radius: 16px;
 }
 
-.selectedRow{
-    background-color: silver;
+table{
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+th
+{
+    position: sticky;
+    top: 0;
+}
+
+.table tbody tr.highlight td {
+    background-color: #E6ECF4;
+}
+
+.table-responsive{
+    max-height:650px;
+    overflow: auto;
+}
+
+tr{
+    cursor: pointer;
 }
